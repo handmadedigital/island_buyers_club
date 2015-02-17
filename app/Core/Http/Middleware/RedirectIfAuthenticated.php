@@ -1,4 +1,4 @@
-<?php namespace TGL\Http\Middleware;
+<?php namespace TGL\Core\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

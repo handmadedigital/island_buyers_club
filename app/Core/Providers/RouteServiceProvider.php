@@ -1,4 +1,4 @@
-<?php namespace TGL\Providers;
+<?php namespace TGL\Core\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

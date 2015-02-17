@@ -1,4 +1,4 @@
-<?php namespace TGL\Http;
+<?php namespace TGL\Core\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'TGL\Http\Middleware\VerifyCsrfToken',
+		'TGL\Core\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'TGL\Http\Middleware\Authenticate',
+		'auth' => 'TGL\Core\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'TGL\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'TGL\Core\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

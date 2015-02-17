@@ -1,4 +1,4 @@
-<?php namespace TGL\Http\Controllers\Auth;
+<?php namespace TGL\Core\Http\Controllers\Auth;
 
 use TGL\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;

@@ -28,7 +28,7 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'TGL\Http\Kernel'
+	'TGL\Core\Http\Kernel'
 );
 
 $app->singleton(
@@ -38,7 +38,7 @@ $app->singleton(
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'TGL\Exceptions\Handler'
+	'TGL\Core\Exceptions\Handler'
 );
 
 /*

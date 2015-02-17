@@ -1,4 +1,4 @@
-<?php namespace TGL\Providers;
+<?php namespace TGL\Core\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;

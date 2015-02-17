@@ -1,4 +1,4 @@
-<?php namespace TGL\Http\Requests;
+<?php namespace TGL\Core\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

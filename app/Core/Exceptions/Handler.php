@@ -1,4 +1,4 @@
-<?php namespace TGL\Exceptions;
+<?php namespace TGL\Core\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
