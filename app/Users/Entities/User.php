@@ -11,24 +11,44 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	use Authenticatable, CanResetPassword;
 
 	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
-
-	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['username', 'slug', 'first_name', 'last_name', 'email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['password', 'remember_token'];
+	protected $hidden = ['password', 'remember_token', 'slug'];
+
+
+
+
+
+
+	/********************************************/
+	/*
+	 * COMMAND FUNCTIONS
+	 */
+	/********************************************/
+
+	/**
+	 * Register a new user
+	 *
+	 * @param $username
+	 * @param $slug
+	 * @param $first_name
+	 * @param $last_name
+	 * @param $email
+	 * @param $password
+	 * @return static
+	 */
+	public static function register($username, $slug, $first_name, $last_name, $email, $password)
+	{
+		return new static(compact('username', 'slug', 'first_name', 'last_name', 'email', 'password'));
+	}
 
 }

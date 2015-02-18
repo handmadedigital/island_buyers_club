@@ -11,8 +11,12 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
+		'TGL\Auth\Events\UserWasRegistered' => [
+			'TGL\Auth\Listeners\EmailWelcomeUser',
+			'TGL\Auth\Listeners\EmailAdminUser',
+		],
+		'TGL\Auth\Events\UserWasLoggedIn' => [
+			'TGL\Auth\Listeners\LogCounter',
 		],
 	];
 

@@ -17,10 +17,12 @@ class CreateVariantsTable extends Migration {
 			$table->increments('id');
 			$table->integer('product_id')->unsigned()->index();
 			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-			$table->boolean('is_master');
-			$table->string('price');
+			$table->integer('height');
+			$table->integer('width');
+			$table->integer('length');
+			$table->decimal('price');
 			$table->string('quantity');
-			$table->string('height');
+			$table->boolean('is_master');
 			$table->timestamps();
 		});
 	}
