@@ -6,8 +6,6 @@ use TGL\Shop\Products\Repositories\ProductRepository;
 
 class AddProductSanitizer extends Sanitizer
 {
-
-
     protected $rules = [
         'name' => 'strtolower',
         'description' => 'strtolower',
