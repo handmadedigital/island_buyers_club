@@ -1,0 +1,18 @@
+.no-padding{
+  padding: 0 !important;
+}
+.left{float: left}
+.right{float: right}
+.center{text-align: center}
+.tight{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+input, textarea{
+  border-bottom: solid 1px #fff;
+  color: $primary-font-color;
+}
+h1,h2,h3,h4,h5,h6,a,p,span,label{
+  font-family: $primary-font !important;
+  color: $primary-font-color;
+}

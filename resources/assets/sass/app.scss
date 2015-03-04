@@ -1,0 +1,158 @@
+@import "partials/_fonts.scss";
+@import "partials/_colors.scss";
+@import "partials/_helpers.scss";
+@import "partials/_grid.scss";
+
+body{
+  background: url("../static/img/main-bk.jpg");
+  height: 1200px;
+  max-height: 1200px;
+  width: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+/****************************/
+/* MAIN HEADER */
+/****************************/
+#header{
+  background-color: $primary-layout-color;
+  height: 70px;
+  max-height: 70px;
+}
+
+#header .row{
+  max-height: 70px;
+  margin-bottom: 0;
+}
+
+#logo{
+  h1{
+    padding: 0;
+    margin: 0;
+    color: $primary-font-color;
+    font-size: 30px;
+  }
+}
+
+/****************************/
+/* ADMIN LAYOUT */
+/****************************/
+#adminWrapper{
+  padding: 0;
+  margin: 0;
+}
+#adminSidebar{
+  background-color: $primary-layout-color;
+  height: 1200px;
+  max-height: 1200px;
+  margin-top: -4%;
+}
+.list-admin-sidebar{
+  li{
+    padding: 10px;
+    border-bottom: solid 2px rgba(255,255,255,.4);
+
+    a{
+      color: $primary-font-color;
+      font-family: $primary-font;
+      font-size: 20px;
+      font-weight: 100;
+      padding: 0 10px;
+    }
+  }
+}
+
+/* ADD PRODUCT */
+.file-field{
+  span {
+    font-size: 18px;
+    line-height: 14rem;
+  }
+  .btn{
+    height: 14rem;
+  }
+}
+.input-field label{
+  color: $primary-font-color;
+  font-size: 20px;
+}
+#addVariationOptionsWrapper{
+  display: none;
+}
+
+
+/*******************************/
+/* USER SIDEBAR */
+/******************************/
+#userSidebar{
+  background-color: $primary-layout-color;
+  height: 1200px;
+  max-height: 1200px;
+  margin-top: -4%;
+}
+#cssmenu{
+  ul{
+    li{
+      padding: 10px;
+      a{
+        color: $primary-font-color;
+        font-family: $primary-font;
+        font-size: 18px;
+      }
+    }
+  }
+}
+/* SUBMENU */
+#cssmenu{
+  ul{
+    ul{
+      display: none;
+    }
+  }
+}
+
+/***************************************/
+/* USER */
+/***************************************/
+.page-title{
+  font-size: 25px;
+  color: $primary-font-color;
+}
+.page-subtitle{
+  font-size: 20px;
+  color: $primary-font-color;
+}
+
+/****************/
+/* Products */
+/****************/
+#productsBar{
+  background: $primary-layout-color;
+  height: 50px;
+}
+.product-display-image{
+  background-color: $primary-layout-color;
+  height: 263px;
+  max-width: 100%;
+  img{
+    max-width: 100%;
+    height: 263px;
+  }
+}
+.product-display-wrapper{
+  padding: 5px;
+}
+.product-display-info{
+  background-color: $primary-layout-color;
+  margin-top: 1%;
+}
+
+.single-product-add-product, .single-product-title, .single-product-details{
+  background: $primary-layout-color;
+
+}
+.single-product-details{
+  min-height: 350px;
+  padding: 1px 10px;
+}

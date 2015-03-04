@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'short_description', 'available_on'];
+    protected $fillable = ['name', 'slug', 'description', 'short_description', 'available_on', 'images'];
 
 
 
@@ -23,9 +23,9 @@ class Product extends Model
      * @param $short_description
      * @return static
      */
-    public static function addProduct($name, $slug, $description, $short_description)
+    public static function addProduct($name, $slug, $description, $short_description, $images)
     {
-        $product = new static(compact('name', 'slug', 'description', 'short_description'));
+        $product = new static(compact('name', 'slug', 'description', 'short_description', 'images'));
         return $product;
     }
 
@@ -50,6 +50,11 @@ class Product extends Model
         return $this->hasMany('TGL\Shop\Products\Entities\Variant');
     }
 
+    public function masterVariant()
+    {
+        return $this->hasOne('TGL\Shop\Products\Entities\Variant')->where('is_master', '=', 1);
+    }
+
     /**
      * product has many product_options
      * product_options = sizes, colors, etc.
@@ -59,5 +64,13 @@ class Product extends Model
     public function options()
     {
         return $this->hasMany('TGL\Shop\Products\Entities\ProductOption');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany('TGL\Shop\Products\Entities\ProductImage');
     }
 }

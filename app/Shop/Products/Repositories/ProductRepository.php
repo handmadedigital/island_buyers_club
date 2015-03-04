@@ -3,13 +3,23 @@
 use Carbon\Carbon;
 use TGL\Core\Repositories\EloquentRepository;
 use TGL\Shop\Products\Entities\Product;
+use TGL\Shop\Products\Entities\ProductImage;
+use TGL\Shop\Products\Entities\ProductOption;
+use TGL\Shop\Products\Entities\ProductOptionValue;
 use TGL\Shop\Products\Entities\Variant;
 use TGL\Shop\Products\Entities\VariantImage;
+use TGL\Shop\Products\Exceptions\ProductNotFoundException;
 
 class ProductRepository extends EloquentRepository
 {
+    /**
+     * @var Product
+     */
     protected $model;
 
+    /**
+     * @param Product $model
+     */
     function __construct(Product $model)
     {
         $this->model = $model;
@@ -19,11 +29,16 @@ class ProductRepository extends EloquentRepository
      * get a specific product
      *
      * @param $slug
+     * @throws ProductNotFoundException
      * @return mixed
      */
     public function getProduct($slug)
     {
-        return $this->model->with('variants', 'options', 'options.values', 'variants.optionValues', 'variants.optionValues.option', 'variants.images')->where('slug', '=', $slug)->first();
+        $product =  $this->model->with('variants', 'options', 'options.values', 'variants.optionValues', 'variants.optionValues.option', 'images', 'masterVariant')->where('slug', '=', $slug)->first();
+
+        if( ! $product) throw new ProductNotFoundException;
+
+        return $product;
     }
 
     /**
@@ -33,9 +48,13 @@ class ProductRepository extends EloquentRepository
      */
     public function getProducts()
     {
-        return $this->model->with('variants', 'variants.optionValues')->latest()->get();
+        return $this->model->with('variants', 'variants.optionValues', 'images', 'masterVariant')->latest()->paginate(15);
     }
 
+    /**
+     * @param $product
+     * @param $master_variant
+     */
     public function persist($product, $master_variant)
     {
         $this->model->name = $product->name;
@@ -46,23 +65,87 @@ class ProductRepository extends EloquentRepository
 
         $this->model->save();
 
+        $this->addProductImages($product);
+
+        $this->AddMasterVariant($master_variant);
+
+    }
+
+    /**
+     * @param $product
+     * @param $master_variant
+     * @param $variations
+     * @return Product
+     */
+    public function addVariableProduct($product, $master_variant, $variations)
+    {
+        $this->persist($product, $master_variant);
+
+        $this->addOptions($variations);
+
+        return $this->model;
+    }
+
+    /**
+     * @param $master_variant
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    private function AddMasterVariant($master_variant)
+    {
         $variant_model = new Variant([
             'is_master' => true,
             'price' => $master_variant['price'],
-            'width' => $master_variant['price'],
+            'width' => $master_variant['width'],
             'length' => $master_variant['length'],
             'height' => $master_variant['height'],
         ]);
 
         $variant = $this->model->variants()->save($variant_model);
+        return $variant;
+    }
 
-        foreach ($master_variant['images'] as $image)
+    /**
+     * @param $variations
+     */
+    private function addOptions($variations)
+    {
+        $variations_amount = count($variations);
+
+        for ($i = 0; $i < $variations_amount; $i++)
         {
-            $variant_image = new VariantImage([
-                'src' => $image
+            $option = new ProductOption(['name' => $variations[$i]['option']]);
+
+            $product_option = $this->model->options()->save($option);
+
+            $this->addOptionValues($variations, $i, $product_option);
+        }
+    }
+
+    /**
+     * @param $variations
+     * @param $i
+     * @param $product_option
+     */
+    private function addOptionValues($variations, $i, $product_option)
+    {
+        foreach ($variations[$i]['option_value'] as $option_value)
+        {
+            $values = new ProductOptionValue(['name' => $option_value]);
+            $product_option->values()->save($values);
+        }
+    }
+
+    /**
+     * @param $product
+     */
+    private function addProductImages($product)
+    {
+        foreach($product->images as $image) {
+            $product_image = new ProductImage([
+                'src' => $image,
             ]);
 
-            $variant->images()->save($variant_image);
+            $this->model->images()->save($product_image);
         }
     }
 }

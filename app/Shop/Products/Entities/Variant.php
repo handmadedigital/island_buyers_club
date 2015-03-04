@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Variant extends Model
 {
-    protected $fillable = ['name', 'price', 'is_master'];
+    protected $fillable = ['name', 'price', 'is_master', 'width', 'weight', 'length', 'height'];
 
     /*******************************************/
     /*
@@ -38,11 +38,5 @@ class Variant extends Model
         return $this->belongsToMany('TGL\Shop\Products\Entities\ProductOptionValue');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function images()
-    {
-        return $this->hasMany('TGL\Shop\Products\Entities\VariantImage');
-    }
+
 }

@@ -6,7 +6,6 @@ use TGL\Users\Entities\User;
 
 class UserTableSeeder extends \Illuminate\Database\Seeder
 {
-    use \TGL\Tools\Slugger\Slugger;
 
     public function run()
     {

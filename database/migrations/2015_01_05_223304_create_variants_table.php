@@ -20,8 +20,9 @@ class CreateVariantsTable extends Migration {
 			$table->integer('height');
 			$table->integer('width');
 			$table->integer('length');
+			$table->integer('weight');
 			$table->decimal('price');
-			$table->string('quantity');
+			$table->string('quantity')->default(1);
 			$table->boolean('is_master');
 			$table->timestamps();
 		});

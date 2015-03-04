@@ -13,7 +13,7 @@ class AddProductRequest extends Request
     {
         return [
             'images' => 'required',
-            'name' => 'required|unique:users',
+            'name' => 'required',
             'description' => 'required',
             'short_description' => 'required',
             'width' => 'required',

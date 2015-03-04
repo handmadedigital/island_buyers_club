@@ -6,8 +6,6 @@ use TGL\Shop\Products\Entities\Product;
 
 class ProductTableSeeder extends \Illuminate\Database\Seeder
 {
-    use \TGL\Tools\Slugger\Slugger;
-
     public function run()
     {
         $faker = Faker::create();
@@ -21,7 +19,7 @@ class ProductTableSeeder extends \Illuminate\Database\Seeder
             \TGL\Shop\Products\Entities\Product::create([
                 'name' => $name,
                 'slug' => $this->sluggify($name.rand(1000,9999)),
-                'description' => $faker->sentence(),
+                'description' => $faker->paragraph(),
                 'short_description' => $faker->sentence(),
                 'available_on' => Carbon::now(),
             ]);

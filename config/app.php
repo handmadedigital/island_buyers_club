@@ -139,11 +139,20 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'TGL\Core\Providers\AppServiceProvider',
-		'TGL\Core\Providers\BusServiceProvider',
 		'TGL\Core\Providers\ConfigServiceProvider',
 		'TGL\Core\Providers\EventServiceProvider',
 		'TGL\Core\Providers\RouteServiceProvider',
+
+		/*
+		 * FIRST PARTY
+		 */
+		'TGL\Packages\Flasher\FlasherServiceProvider',
+		'TGL\Core\Providers\HelperServiceProvider',
+
+		/*
+		 * THIRD PARTY
+		 */
+		'Barryvdh\Debugbar\ServiceProvider',
 
 	],
 
@@ -192,6 +201,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		/*
+		 * FIRST PARTY
+		 */
+		'Flasher' > 'TGL\Packages\Flasher\Flasher'
 
 	],
 

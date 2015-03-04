@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'TGL\Http\Controllers';
+	protected $namespace = 'TGL';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.
@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider {
 		$router->group(['namespace' => $this->namespace], function($router)
 		{
 			require app_path('Core/Http/routes.php');
+			require app_path('Shop/Products/Http/routes.php');
 		});
 	}
 

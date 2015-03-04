@@ -18,7 +18,7 @@ class AddProductCommandHandler
 
     public function handle(AddProductCommand $command)
     {
-        $product = Product::addProduct($command->name, $command->slug, $command->description, $command->short_description);
+        $product = Product::addProduct($command->name, $command->slug, $command->description, $command->short_description, $command->image_names);
 
         $this->productRepo->persist($product, $command->master_variant);
     }
