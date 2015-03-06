@@ -6,33 +6,52 @@ use TGL\Packages\Events\Contracts\Listener;
 class Dispatcher
 {
     /**
-     * List of listeners registered
-     * with the event
+     * List of listeners subscribed to an event
      *
      * @var array
      */
-    protected $listeners = [];
+    private  $listeners = [];
 
-    public function addListener($name, Listener $listener)
+    public function assignListener($event, Listener $listener)
     {
-        $this->listeners[$name][] = $listener;
+        $this->listeners[$event][] = $listener;
     }
 
-    public function hasListeners($name)
+    /**
+     * @param string
+     */
+    public function fire($event)
     {
-        return isset($this->listeners[$name]);
-    }
+        $event_name = $this->getEventName($event);
 
-    public function getListeners($name)
-    {
-        if ( ! $this->hasListeners($name)) {
-            return [];
+        $listeners = $this->getListeners($event_name);
+
+        foreach($listeners as $listener)
+        {
+            $listener->handle($event);
         }
-        return $this->listeners[$name];
     }
 
-    public function dispatch(Event $event)
+    /**
+     * get the event class full name
+     *
+     * @param $event
+     * @return string
+     */
+    public function getEventName($event)
     {
+        $event_name = get_class($event);
 
+        return str_replace('\\','.',$event_name);
+    }
+
+    /**
+     * @param string
+     * @return array
+     */
+    public  function getListeners($event)
+    {
+        if( ! isset($this->listeners[$event])) return [];
+        return $this->listeners[$event];
     }
 }

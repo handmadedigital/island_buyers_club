@@ -1,5 +1,6 @@
 <?php namespace TGL\Packages\Events\Contracts;
 
-interface Listener {
-
+interface Listener
+{
+    public function handle($event);
 }

@@ -140,7 +140,6 @@ return [
 		 * Application Service Providers...
 		 */
 		'TGL\Core\Providers\ConfigServiceProvider',
-		'TGL\Core\Providers\EventServiceProvider',
 		'TGL\Core\Providers\RouteServiceProvider',
 
 		/*
@@ -148,6 +147,7 @@ return [
 		 */
 		'TGL\Packages\Flasher\FlasherServiceProvider',
 		'TGL\Core\Providers\HelperServiceProvider',
+		'TGL\Core\Providers\EventServiceProvider',
 
 		/*
 		 * THIRD PARTY

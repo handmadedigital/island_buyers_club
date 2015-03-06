@@ -17,7 +17,7 @@ class Permission extends Model
 
 
 
-    
+
 
     /*
      * Relationship Methods

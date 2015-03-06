@@ -1,36 +1,34 @@
 <?php namespace TGL\Core\Providers;
 
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use TGL\Packages\Events\Dispatcher;
 
-class EventServiceProvider extends ServiceProvider {
+class EventServiceProvider extends ServiceProvider
+{
 
-	/**
-	 * The event handler mappings for the application.
-	 *
-	 * @var array
-	 */
-	protected $listen = [
-		'TGL\Auth\Events\UserWasRegistered' => [
-			'TGL\Auth\Listeners\EmailWelcomeUser',
-			'TGL\Auth\Listeners\EmailAdminUser',
-		],
-		'TGL\Auth\Events\UserWasLoggedIn' => [
-			'TGL\Auth\Listeners\LogCounter',
-		],
-	];
+    protected $listen = [
+        'TGL.Shop.Orders.Events.OrderWasPlaced' => [
+            'TGL\Shop\Orders\Listeners\SendAdminOrderWasPlacedEmail',
+            'TGL\Shop\Orders\Listeners\SendUserOrderWasPlacedEmail',
+        ]
+    ];
 
-	/**
-	 * Register any other events for your application.
-	 *
-	 * @param  \Illuminate\Contracts\Events\Dispatcher  $events
-	 * @return void
-	 */
-	public function boot(DispatcherContract $events)
-	{
-		parent::boot($events);
+    public function register()
+    {
 
-		//
-	}
+    }
 
+    /**
+     * @param Dispatcher $event
+     */
+    public function boot(Dispatcher $event)
+    {
+        foreach($this->listen as $event_name => $listeners)
+        {
+            foreach($listeners as $listener)
+            {
+                $event->assignListener($event_name, new $listener);
+            }
+        }
+    }
 }

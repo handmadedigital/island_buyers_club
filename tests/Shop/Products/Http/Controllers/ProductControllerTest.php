@@ -5,7 +5,7 @@ class ProductControllerTest extends TestCase
     /** @test */
     public function should_load_individual_product_page()
     {
-        $response = $this->call('GET', '/product/arne4880');
+        $response = $this->call('GET', '/product/brooke1669');
 
         $this->assertEquals(200, $response->getStatusCode());
     }
@@ -21,7 +21,7 @@ class ProductControllerTest extends TestCase
     /** @test */
     public function should_load_add_product_page()
     {
-        $response = $this->call('GET', '/product/add-product');
+        $response = $this->call('GET', '/admin/product/add-product');
 
         $this->assertEquals(200, $response->getStatusCode());
     }
