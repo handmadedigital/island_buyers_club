@@ -18,7 +18,7 @@ class CategoryProductTableSeeder extends \Illuminate\Database\Seeder
             {
                 DB::table('category_product')->insert([
                     'product_id' => $product,
-                    'category_id' => rand(1,6)
+                    'category_id' => rand(1,4)
                 ]);
             }
         }

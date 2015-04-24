@@ -10,7 +10,7 @@ class Dispatcher
      *
      * @var array
      */
-    private  $listeners = [];
+    protected   $listeners = [];
 
     public function assignListener($event, Listener $listener)
     {

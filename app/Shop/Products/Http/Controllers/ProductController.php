@@ -1,11 +1,7 @@
 <?php namespace TGL\Shop\Products\Http\Controllers;
 
-use Illuminate\Console\Scheduling\Event;
 use TGL\Core\Http\Controllers\Controller;
-use TGL\Packages\Events\Dispatcher;
 use TGL\Packages\Flasher\Flasher;
-use TGL\Shop\Orders\Events\OrderWasPlaced;
-use TGL\Shop\Orders\Listeners\SendUserOrderWasPlacedEmail;
 use TGL\Shop\Products\Commands\AddProductCommand;
 use TGL\Shop\Products\Commands\AddVariableProductCommand;
 use TGL\Shop\Products\Http\Requests\AddProductRequest;
@@ -43,14 +39,11 @@ class ProductController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function getProducts(Dispatcher $event)
+    public function getProducts()
     {
-        dd($event->getListeners('TGL.Shop.Orders.Events.OrderWasPlaced'));
-        $event->fire(new OrderWasPlaced);
+        $products = $this->productService->getProducts();
 
-        //$products = $this->productService->getProducts();
-
-        //return view('products.products', compact('products'));
+        return view('products.products', compact('products'));
     }
 
     /**

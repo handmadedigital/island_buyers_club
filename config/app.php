@@ -153,6 +153,7 @@ return [
 		 * THIRD PARTY
 		 */
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Laracasts\Generators\GeneratorsServiceProvider'
 
 	],
 

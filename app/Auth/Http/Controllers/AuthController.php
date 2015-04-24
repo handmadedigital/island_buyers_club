@@ -1,5 +1,6 @@
 <?php namespace TGL\Auth\Http\Controllers;
 
+use DateTime;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Contracts\Auth\Guard;
 use TGL\Auth\Commands\UserLogInCommand;
@@ -37,7 +38,7 @@ class AuthController extends Controller
     {
         $dispatcher->pipeThrough(['TGL\Core\Decorators\SlugGeneratorDecorator']);
 
-        $this->dispatchFrom(UserRegisterCommand::class, $request);
+        $this->dispatch(UserRegisterCommand::class, $request);
 
         return redirect()->route('login');
     }
@@ -60,9 +61,11 @@ class AuthController extends Controller
 
         if ($this->auth->attempt($credentials, $request->has('remember')))
         {
-            $this->dispatchFrom(UserLogInCommand::class, $request);
+            $this->dispatch(UserLogInCommand::class);
+            $this->auth->user()->updated_at = new DateTime();
+            $this->auth->user()->save();
 
-            return redirect()->intended('/'.$this->auth->user()->username);
+            return redirect()->intended('dashboard/'.$this->auth->user()->username);
         }
 
         return redirect()
@@ -80,6 +83,6 @@ class AuthController extends Controller
     {
         $this->auth->logout();
 
-        return redirect('/');
+        return redirect('/auth/login');
     }
 }

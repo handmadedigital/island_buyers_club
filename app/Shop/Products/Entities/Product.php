@@ -73,4 +73,9 @@ class Product extends Model
     {
         return $this->hasMany('TGL\Shop\Products\Entities\ProductImage');
     }
+
+    public function categories()
+    {
+        return  $this->belongsToMany('TGL\Shop\Categories\Entities\Category');
+    }
 }

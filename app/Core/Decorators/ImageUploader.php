@@ -18,7 +18,7 @@ class ImageUploader implements CommandBus
 
             $command->image_names[] = $unique_name;
 
-            $image->move(public_path().'/media/product_images/', $unique_name);
+            $image->move(public_path().'/static/img/', $unique_name);
         }
     }
 }

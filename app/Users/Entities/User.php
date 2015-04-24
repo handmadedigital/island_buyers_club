@@ -28,7 +28,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
 
-
 	/********************************************/
 	/*
 	 * COMMAND FUNCTIONS
@@ -49,6 +48,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public static function register($username, $slug, $first_name, $last_name, $email, $password)
 	{
 		return new static(compact('username', 'slug', 'first_name', 'last_name', 'email', 'password'));
+	}
+
+
+	/********************************************/
+	/*
+	 * RELATIONSHIP FUNCTIONS
+	 */
+	/********************************************/
+
+	public function detail()
+	{
+		return $this->hasOne('TGL\Users\Entities\UserDetail');
+	}
+
+	public function comments()
+	{
+		return $this->morphMany('TGL\Comments\Comment', 'commentable');
 	}
 
 }

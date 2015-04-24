@@ -8,7 +8,7 @@ $(function()
 
 function getOptionValues()
 {
-    $('.option-value-selector').change(function () {
+    $('.select-option-values').change(function () {
 
     });
 }

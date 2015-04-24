@@ -18,7 +18,7 @@
                     <div class="file-field input-field" style="height: 250px;margin-top: 30%">
                       <input class="file-path validate" name="images[]" type="text"/>
                       <div class="btn">
-                        <span>Add Product Images</span>
+                        <span>Add All Images</span>
                         <input type="file" name="images[]" multiple/>
                       </div>
                     </div>
@@ -34,12 +34,12 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s3">
-                            <input type="number" id="productWidthInput" class="validate" name="width">
-                            <label for="productWidthInput">Width</label>
-                        </div>
-                        <div class="input-field col s3">
                             <input type="number" id="productLengthInput" class="validate" name="length">
                             <label for="productLengthInput">Length</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input type="number" id="productWidthInput" class="validate" name="width">
+                            <label for="productWidthInput">Width</label>
                         </div>
                         <div class="input-field col s3">
                             <input type="number" id="productHeightInput" class="validate" name="height">

@@ -27,6 +27,11 @@ abstract class EloquentRepository
         return $this->model->paginate($count);
     }
 
+    public function getLatestPaginated($count)
+    {
+        return $this->model->latest()->paginate($count);
+    }
+
     public function getById($id)
     {
         return $this->model->find($id);

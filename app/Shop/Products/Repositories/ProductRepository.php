@@ -48,7 +48,7 @@ class ProductRepository extends EloquentRepository
      */
     public function getProducts()
     {
-        return $this->model->with('variants', 'variants.optionValues', 'images', 'masterVariant')->latest()->paginate(15);
+        return $this->model->with('variants', 'variants.optionValues', 'images', 'masterVariant')->latest()->paginate(10);
     }
 
     /**

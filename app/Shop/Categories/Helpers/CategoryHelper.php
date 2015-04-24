@@ -23,7 +23,7 @@ class CategoryHelper
 
         foreach($categories as $category)
         {
-            echo '<li class=""><a href=""><span>'.$category->name.'</span></a></li>';
+            echo '<li class=""><a href="/products/'.$category->slug.'"><span>'.$category->name.'</span></a></li>';
         }
     }
 }
