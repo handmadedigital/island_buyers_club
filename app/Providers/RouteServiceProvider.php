@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace TGL\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'App\Http\Controllers';
+	protected $namespace = 'TGL';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.
@@ -37,7 +37,14 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		$router->group(['namespace' => $this->namespace], function($router)
 		{
-			require app_path('Http/routes.php');
+			require app_path('Core/Http/routes.php');
+			require app_path('Shop/Products/Http/routes.php');
+			require app_path('Shop/Categories/Http/routes.php');
+			require app_path('Shop/Container/Http/routes.php');
+			require app_path('Shop/Orders/Http/routes.php');
+			require app_path('Auth/Http/routes.php');
+			require app_path('Users/Http/routes.php');
+			require app_path('Pages/Http/routes.php');
 		});
 	}
 

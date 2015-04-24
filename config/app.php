@@ -139,15 +139,16 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'TGL\Core\Providers\ConfigServiceProvider',
-		'TGL\Core\Providers\RouteServiceProvider',
+		'TGL\Providers\ConfigServiceProvider',
+		'TGL\Providers\RouteServiceProvider',
+		'TGL\Providers\EventServiceProvider',
 
 		/*
 		 * FIRST PARTY
 		 */
 		'TGL\Packages\Flasher\FlasherServiceProvider',
-		'TGL\Core\Providers\HelperServiceProvider',
-		'TGL\Core\Providers\EventServiceProvider',
+		'TGL\Providers\HelperServiceProvider',
+
 
 		/*
 		 * THIRD PARTY
