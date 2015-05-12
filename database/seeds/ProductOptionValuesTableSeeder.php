@@ -12,7 +12,7 @@ class ProductOptionValuesTableSeeder extends \Illuminate\Database\Seeder
 
         \TGL\Shop\Products\Entities\ProductOptionValue::truncate();
 
-        $values = ['opt1', 'opt2', 'opt3', 'opt4'];
+        $values = ['opt1', 'opt2', 'opt3'];
 
         foreach(range(1, 90) as $options)
         {

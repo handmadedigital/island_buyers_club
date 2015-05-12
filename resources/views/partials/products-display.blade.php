@@ -42,7 +42,7 @@
                         <a href="/product/{{$product->slug}}">
                             <div class="rod-5 col m4 s12  no-padding">
                                 <div class="product-display-wrapper">
-                                    <div class="product-display-image">
+                                    <div class="product-display-image center">
                                         <img src="/static/img/{{$product->images[0]->src}}">
                                     </div>
                                     <div class="product-display-info">

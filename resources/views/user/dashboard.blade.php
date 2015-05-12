@@ -27,7 +27,7 @@
                     @foreach($dashboard['categories'] as $category)
                         <a href="/products/{{$category->slug}}">
                             <div class="col s6 m3 small-padding">
-                                <div class="dash-category-block-wrapper">
+                                <div class="dash-category-block-wrapper center">
                                     <img src="/static/img/{{$category->image}}">
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                     @foreach($dashboard['recent_products'] as $product)
                         <div class="col s6 m3 small-padding">
                             <a href="/product/{{$product->slug}}">
-                                <div class="dash-product-block-wrapper no-background">
+                                <div class="dash-product-block-wrapper no-background center">
                                     <img src="/static/img/{{$product->images[0]->src}}">
                                 </div>
                             </a>

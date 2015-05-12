@@ -8,4 +8,5 @@ $router->group(['prefix' => 'admin'], function($router){
 });
 
 $router->get('products', ['as' => 'products', 'uses' => 'Shop\Products\Http\Controllers\ProductController@getProducts']);
+$router->get('/product/get-options', ['as' => 'get.product.options', 'uses' => 'Shop\Products\Http\Controllers\ProductController@getProductOptions']);
 $router->get('product/{slug}', ['as' => 'product', 'uses' => 'Shop\Products\Http\Controllers\ProductController@getProduct']);

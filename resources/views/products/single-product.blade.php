@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="col s12 m4">
                                             <select class="select-option-values">
-                                                <option value="" disabled selected="selected">{{$option->name}}</option>
+                                                <option value="{{$option->id}}" disabled selected="selected">{{$option->name}}</option>
                                                 @foreach($option->values as $value)
                                                     <option value="{{$value->id}}">{{$value->name}}</option>
                                                 @endforeach

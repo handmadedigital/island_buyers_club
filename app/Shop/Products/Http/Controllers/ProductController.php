@@ -6,6 +6,7 @@ use TGL\Shop\Products\Commands\AddProductCommand;
 use TGL\Shop\Products\Commands\AddVariableProductCommand;
 use TGL\Shop\Products\Http\Requests\AddProductRequest;
 use TGL\Shop\Products\Http\Requests\AddVariableProductRequest;
+use TGL\Shop\Products\Http\Requests\GetProductOptionsRequest;
 use TGL\Shop\Products\Services\ProductService;
 
 class ProductController extends Controller
@@ -87,5 +88,10 @@ class ProductController extends Controller
         Flasher::message('Product Added!');
 
         return redirect()->route('add.variant.variations', $attributes = ['product_slug' => $product->slug]);
+    }
+
+    public function getProductOptions(GetProductOptionsRequest $request)
+    {
+        $this->productService->getProductOptions($request->selected_options, $request->next_option_id);
     }
 }

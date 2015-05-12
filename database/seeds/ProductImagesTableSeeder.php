@@ -8,7 +8,7 @@ class ProductImagesTableSeeder extends \Illuminate\Database\Seeder
     {
         DB::statement("SET foreign_key_checks = 0");
 
-        $src = ['brushs-2.png', 'saw.png', 'screw-driver.png', 'tool-1.png','tool-2.png','hammer-1.png', 'hammer-2.png', 'mini-saw.png', 'nuts.png', 'paint-brush.png'];
+        $src = ['diamond-brilliance.png', 'diamond-brite.png', 'durazzo.png', 'pearl-brite.png', 'pool-brite.png', 'river-rok.png'];
 
         $faker = Faker::create();
 
@@ -20,7 +20,7 @@ class ProductImagesTableSeeder extends \Illuminate\Database\Seeder
             {
                 \TGL\Shop\Products\Entities\ProductImage::create([
                     'product_id' => $product,
-                    'src' => $src[rand(0,9)]
+                    'src' => $src[rand(0,5)]
                 ]);
             }
 
