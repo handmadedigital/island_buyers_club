@@ -341,8 +341,9 @@ select {
   color: #fff;
   width: 100%;
   border: none;
-  padding: 18px;
-  margin-left: .2%; }
+  padding: 10px;
+  margin-left: .2%;
+  font-size: 26px; }
 
 .single-product-image img {
   width: 100%;
@@ -361,7 +362,8 @@ select {
 
 .single-product-add-to-container-wrapper input {
   background: rgba(112, 100, 93, 0.6);
-  height: 58px; }
+  height: 58px;
+  font-size: 40px; }
 
 .recently-viewed-products-wrapper .dash-title-wrapper {
   margin-top: -1%;

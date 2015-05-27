@@ -343,8 +343,9 @@ select{display: block !important}
   color: $primary-font-color;
   width: 100%;
   border: none;
-  padding: 18px;
+  padding: 10px;
   margin-left: .2%;
+  font-size: 26px;
 }
 .single-product-image img{
   width: 100%;
@@ -368,6 +369,7 @@ select{
   input{
     background: $primary-layout-color;
     height: 58px;
+    font-size: 40px;
   }
 }
 .recently-viewed-products-wrapper{
