@@ -78,7 +78,7 @@
                                 @foreach($product->options as $option)
                                     <div class="row">
                                         <div class="col s12 m2">
-                                            <h3>{{$option->name}}</h3>
+                                            <h3>{{ucwords($option->name)}}</h3>
                                         </div>
                                         <div class="col s12 m4">
                                             <select class="select-option-values">
