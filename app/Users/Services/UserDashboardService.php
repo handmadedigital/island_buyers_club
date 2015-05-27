@@ -26,7 +26,7 @@ class UserDashboardService
 
         $dashboard['categories'] = $this->categoryRepo->getLatest();
 
-        $dashboard['recent_products'] = $this->productRepo->getLatestPaginated(8);
+        $dashboard['recent_products'] = $this->productRepo->getLatestPaginated(8)->load('images');
 
         return $dashboard;
 

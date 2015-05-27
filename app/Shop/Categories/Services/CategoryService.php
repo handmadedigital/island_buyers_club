@@ -19,7 +19,7 @@ class CategoryService
     {
         $category = $this->categoryRepo->getBySlug($category_slug);
 
-        return $category->products;
+        return $category->products->load('variants', 'variants.optionValues', 'images', 'masterVariant', 'categories');
     }
 
     public function getCategories()
