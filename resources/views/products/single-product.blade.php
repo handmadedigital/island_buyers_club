@@ -116,24 +116,36 @@
             <div class="row">
                 <div class="col s12 m10 no-padding">
                     <div class="dash-title-wrapper dash-new-product-title">
-                        <h5>Recently Viewed Products</h5>
+                        <h5>Recently Added Products</h5>
                     </div>
                     <div class="row">
                         <div class="col s6 m3 small-padding">
-                            <div class="dash-product-block-wrapper">
-                            </div>
+                            <a href="/product/fiberglass-step-ladder-tpe-1aa3152">
+                                <div class="dash-product-block-wrapper center">
+                                    <img src="/media/product_images/ladder-red-open.png">
+                                </div>
+                            </a>
                         </div>
                         <div class="col s6 m3 small-padding">
-                            <div class="dash-product-block-wrapper">
-                            </div>
+                            <a href="/product/aluminum-extension-ladder-type-1a7253">
+                                <div class="dash-product-block-wrapper center">
+                                    <img src="/media/product_images/ladder-silver-extend.png">
+                                </div>
+                            </a>
                         </div>
                         <div class="col s6 m3 small-padding">
-                            <div class="dash-product-block-wrapper">
-                            </div>
+                            <a href="/product/steel-air-tyre-wheel-barrow6935">
+                                <div class="dash-product-block-wrapper center">
+                                    <img src="/media/product_images/red-wheel-barrow-front.png">
+                                </div>
+                            </a>
                         </div>
                         <div class="col s6 m3 small-padding">
-                            <div class="dash-product-block-wrapper">
-                            </div>
+                            <a href="/product/poly-tray-dual-air-tyre-wheel-barrow9701">
+                                <div class="dash-product-block-wrapper center">
+                                    <img src="/media/product_images/green-wheel-barrow-front.png">
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

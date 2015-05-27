@@ -498,5 +498,8 @@ th {
   .dash-category-block-wrapper img, .dash-product-block-wrapper img {
     padding-top: 12%; } }
 
+.dash-product-block-wrapper img {
+  width: 76%; }
+
 
 /*# sourceMappingURL=app.css.map */
