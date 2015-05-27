@@ -166,6 +166,9 @@ select{display: block !important}
   max-height: 170px;
   overflow: hidden;
   margin-bottom: 0%;
+  img{
+    width: 100%;
+  }
 }
 .dash-title-wrapper{
   background-color: $primary-layout-color;
@@ -516,5 +519,13 @@ th{
 .checkout-info-info{
   img{
     width: 50%;
+  }
+}
+
+@media (max-width: 1366px){
+  .dash-category-block-wrapper, .dash-product-block-wrapper{
+    img{
+      padding-top: 12%;
+    }
   }
 }

@@ -170,6 +170,8 @@ select {
   max-height: 170px;
   overflow: hidden;
   margin-bottom: 0%; }
+  .dash-category-block-wrapper img, .dash-product-block-wrapper img {
+    width: 100%; }
 
 .dash-title-wrapper {
   background-color: rgba(112, 100, 93, 0.6);
@@ -491,6 +493,10 @@ th {
 
 .checkout-info-info img {
   width: 50%; }
+
+@media (max-width: 1366px) {
+  .dash-category-block-wrapper img, .dash-product-block-wrapper img {
+    padding-top: 12%; } }
 
 
 /*# sourceMappingURL=app.css.map */
