@@ -73,7 +73,7 @@
                             <h6>{{$product->description}}</h6>
                         </div>
                         <div class="single-product-options">
-                            @if(isset($product->options))
+                            @if(!empty($product->options->toArray()))
                                 <h3>Select your options</h3>
                                 @foreach($product->options as $option)
                                     <div class="row">
