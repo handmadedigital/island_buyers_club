@@ -49,7 +49,7 @@
                                         <div class="product-display-info">
                                             <div class="row">
                                                 <div class="col s8">
-                                                    <h6>{{$product->name}}</h6>
+                                                    <h6>{{ucwords($product->name)}}</h6>
                                                 </div>
                                                 <div class="col s4">
                                                     <h6>${{$product->masterVariant->price}}</h6>

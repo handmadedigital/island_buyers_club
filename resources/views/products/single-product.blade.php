@@ -66,7 +66,7 @@
                 </div>
                 <div class="col s9 small-padding">
                     <div class="single-product-title">
-                        <h1>{{$product->name}}</h1>
+                        <h1>{{ucwords($product->name)}}</h1>
                     </div>
                     <div class="single-product-details">
                         <div class="single-product-description">
