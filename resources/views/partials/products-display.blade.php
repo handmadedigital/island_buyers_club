@@ -19,13 +19,7 @@
             <div id="productsBar">
                 <div class="row">
                     <div class="col s4">
-                        <h6>Sort By:</h6>
-                        <select id="selectProductSorting">
-                            <option>Best Selling</option>
-                            <option>Best Match</option>
-                            <option>Price</option>
-                            <option>Newest</option>
-                        </select>
+                        <h6>Island Buyers Club</h6>
                     </div>
                     <div class="col s8">
                         <div class="product-paginator right">
