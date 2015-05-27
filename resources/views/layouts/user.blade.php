@@ -57,6 +57,7 @@
                         {{ Session::get('flash_notification.message') }}
                     </div>
                 @endif
+                @include('partials.form-error')
                 @yield('user-content')
             </div>
         </div>

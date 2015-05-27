@@ -25,4 +25,11 @@ class AddToContainerRequest extends Request
     {
         return true;
     }
+
+    public function  messages()
+    {
+        return [
+            'variant_id.required' => 'Please select a product option!',
+        ];
+    }
 }

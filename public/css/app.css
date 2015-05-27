@@ -501,5 +501,21 @@ th {
 .dash-product-block-wrapper.single-product img {
   width: 76%; }
 
+.alert.alert-info {
+  background: #5ba043;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  margin-top: .5%; }
+
+.alert.alert-danger {
+  background: #ff6653;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  margin-top: .5%; }
+
 
 /*# sourceMappingURL=app.css.map */
