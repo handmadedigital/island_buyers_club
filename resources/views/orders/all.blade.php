@@ -34,34 +34,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="/{{Auth::user()->slug}}/order/details">45454</a></td>
-                            <td>11/12/2015</td>
-                            <td>11x20x15</td>
-                            <td>400lbs</td>
-                            <td>$180.00</td>
-                        </tr>
-                        <tr>
-                            <td>45343</td>
-                            <td>11/12/2015</td>
-                            <td>11x20x15</td>
-                            <td>400lbs</td>
-                            <td>$180.00</td>
-                        </tr>
-                        <tr>
-                            <td>5455501</td>
-                            <td>11/12/2015</td>
-                            <td>11x20x15</td>
-                            <td>400lbs</td>
-                            <td>$180.00</td>
-                        </tr>
-                        <tr>
-                            <td>574445501</td>
-                            <td>11/12/2015</td>
-                            <td>11x20x15</td>
-                            <td>400lbs</td>
-                            <td>$180.00</td>
-                        </tr>
+                        @foreach($orders as $order)
+                            <tr>
+                                <td><a href="/{{Auth::user()->slug}}/order/{{$order->order_number}}/details">{{$order->order_number}}</a></td>
+                                <td>11/12/2015</td>
+                                <td>11x20x15</td>
+                                <td>400lbs</td>
+                                <td>$180.00</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -1,48 +1,34 @@
 <?php
 
 use Faker\Factory as Faker;
+use TGL\Shop\Products\Entities\Variant;
 
 class VariantTableSeeder extends \Illuminate\Database\Seeder
 {
 
     public function run()
     {
+        DB::statement("SET foreign_key_checks = 0");
         $faker = Faker::create();
 
-        \TGL\Shop\Products\Entities\Variant::truncate();
+        Variant::truncate();
 
-        foreach(range(1, 30) as $index)
+        $i = 1;
+
+        foreach(range(1, 33) as $index)
         {
-            foreach(range(1,10) as $value)
-            {
-                $master = false;
-
-                if($value == 1) $master = true;
-                \TGL\Shop\Products\Entities\Variant::create([
-                    'product_id' => $index,
-                    'height' => $faker->randomNumber(),
-                    'width' => $faker->randomNumber(),
-                    'length' => $faker->randomNumber(),
-                    'weight' => $faker->randomNumber(),
-                    'price' => $faker->randomNumber(),
-                    'quantity' => rand(0,150),
-                    'is_master' => $master
-                ]);
-            }
-        }
-
-        foreach(range(31,50) as $master)
-        {
-            \TGL\Shop\Products\Entities\Variant::create([
-                'product_id' => $master,
-                'height' => $faker->randomDigit,
-                'width' => $faker->randomDigit,
-                'length' => $faker->randomDigit,
-                'weight' => $faker->randomDigit,
-                'price' => $faker->randomNumber(),
-                'quantity' => rand(0,150),
+            Variant::create([
+                'product_id' => $i,
+                'height' => $faker->numberBetween(10, 30),
+                'width' => $faker->numberBetween(10, 30),
+                'length' => $faker->numberBetween(10, 30),
+                'weight' => $faker->numberBetween(10, 30),
+                'price' => $faker->numberBetween(100, 7500),
+                'quantity' => $faker->numberBetween(10, 30),
                 'is_master' => true
             ]);
+
+            $i++;
         }
     }
 }

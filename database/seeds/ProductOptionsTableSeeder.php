@@ -13,17 +13,17 @@ class ProductOptionsTableSeeder extends \Illuminate\Database\Seeder
         \TGL\Shop\Products\Entities\ProductOption::truncate();
 
 
-        $options = ['size', 'color', 'gender'];
-
-        foreach(range(1, 30) as $product)
-        {
-            foreach($options as $option)
-            {
-                \TGL\Shop\Products\Entities\ProductOption::create([
-                    'product_id' => $product,
-                    'name' => $option
-                ]);
-            }
-        }
+//        $options = ['size', 'color', 'gender'];
+//
+//        foreach(range(1, 30) as $product)
+//        {
+//            foreach($options as $option)
+//            {
+//                \TGL\Shop\Products\Entities\ProductOption::create([
+//                    'product_id' => $product,
+//                    'name' => $option
+//                ]);
+//            }
+//        }
     }
 }

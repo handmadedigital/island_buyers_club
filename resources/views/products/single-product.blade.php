@@ -43,17 +43,25 @@
             <div class="row">
                 <div class="col s3 small-padding">
                     <div class="single-product-image">
-                        <img src="/static/img/{{$product->images[0]->src}}">
+                        <img src="/media/product_images/{{$product->images[0]->src}}">
                     </div>
                     <div class="single-product-add-to-container-wrapper">
-                        <div class="row">
-                            <div class="col s2 no-padding">
-                                <input type="number" value="1">
+                        <form method="post" action="/container/add-to-container">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <div class="row">
+                                <div class="col s2 no-padding">
+                                    <input name="quantity" type="number" value="1">
+                                </div>
+                                <div class="col s10 no-padding">
+                                    @if(empty($product->options->toArray()))
+                                        <input type="hidden" name="variant_id" value="{{$product->masterVariant->id}}">
+                                    @else
+                                        <input type="hidden" id="variantIdValue" name="variant_id" value="">
+                                    @endif
+                                    <button class="add-to-container-btn">Add To Container</button>
+                                </div>
                             </div>
-                            <div class="col s10 no-padding">
-                                <a href="/product/{{$product->slug}}"><button class="add-to-container-btn">Add To Container</button></a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col s9 small-padding">

@@ -12,9 +12,9 @@ function getOptionValues()
 
         $.get(
             "/product/get-options",
-            {'selected_options[]': selected_options, 'next_option_id': 5},
+            {'selected_options[]': selected_options},
             function(data){
-                console.log(data);
+                $('#variantIdValue').val(data);
             }
         );
     });

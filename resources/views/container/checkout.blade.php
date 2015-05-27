@@ -44,23 +44,35 @@
                         </div>
                     </div>
                     <div class="checkout-info-info">
-                        <div class="row">
-                            <div class="col s2">
-                                <img src="http://placehold.it/50x50">
+                        <?php
+                            $total_price = 0;
+                        ?>
+                        @foreach($products as $container)
+                            <div class="row">
+                                <div class="col s2">
+                                    <img src="/media/product_images/{{$container->variant->product->images[0]->src}}">
+                                </div>
+                                <div class="col s3">
+                                    @if(empty($container->variant->optionValues->toArray()))
+                                        <p>{{$container->variant->product->name}}</p>
+                                    @else
+                                        <p>{{$container->variant->optionValues[0]->name}}{{$container->variant->optionValues[0]->option->name}} {{$container->variant->product->name}}</p>
+                                    @endif
+                                </div>
+                                <div class="col s2">
+                                    <p>{{$container->variant->price}}</p>
+                                </div>
+                                <div class="col s3">
+                                    <p>{{$container->quantity}}</p>
+                                </div>
+                                <div class="col s2">
+                                    <p>${{$container->quantity * $container->variant->price}}</p>
+                                </div>
                             </div>
-                            <div class="col s3">
-                                <h6>Rokker</h6>
-                            </div>
-                            <div class="col s2">
-                                <h6>$21.72</h6>
-                            </div>
-                            <div class="col s3">
-                                <h6>5</h6>
-                            </div>
-                            <div class="col s2">
-                                <h6>$108.60</h6>
-                            </div>
-                        </div>
+                            <?php
+                                $total_price +=  $container->quantity * $container->variant->price;
+                            ?>
+                            @endforeach
                     </div>
                     <div class="checkout-total-wrapper">
                         <div class="row">
@@ -74,7 +86,7 @@
                                             <h6>Container Subtotal</h6>
                                         </div>
                                         <div class="col s6">
-                                            <h6>$108.60</h6>
+                                            <h6>${{$total_price}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -94,12 +106,19 @@
                                             <h6>Order Total</h6>
                                         </div>
                                         <div class="col s6">
-                                            <h6>$108.60</h6>
+                                            <h6>${{$total_price}}</h6>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="place-order-btn-wrapper">
-                                    <button>Place Order</button>
+                                    <form method="post" action="/order/add">
+                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                        @foreach($products as $container)
+                                            <input type="hidden" name="variant_id[]" value="{{$container->variant->id}}">
+                                            <input type="hidden" name="price[]" value="{{$container->quantity * $container->variant->price}}">
+                                        @endforeach
+                                        <button>Place Order</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

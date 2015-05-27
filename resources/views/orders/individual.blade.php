@@ -33,42 +33,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Rokker</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
-                        <tr>
-                            <td>Ladders15</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
-                        <tr>
-                            <td>Ladders15</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
-                        <tr>
-                            <td>Rokker</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
-                        <tr>
-                            <td>Ladders15</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
-                        <tr>
-                            <td>Ladders15</td>
-                            <td>$128.80</td>
-                            <td>5</td>
-                            <td>$644.00</td>
-                        </tr>
+                        @foreach($order as $o)
+                            <tr>
+                                <td>{{$o->variant->product->name}}</td>
+                                <td>{{$o->variant->price}}</td>
+                                <td>1</td>
+                                <td>{{$o->variant->price}}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -92,6 +92,8 @@ class ProductController extends Controller
 
     public function getProductOptions(GetProductOptionsRequest $request)
     {
-        $this->productService->getProductOptions($request->selected_options, $request->next_option_id);
+        $variant_id = $this->productService->getProductOptions($request->selected_options);
+
+        return $variant_id;
     }
 }

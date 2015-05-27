@@ -13,7 +13,6 @@ class GetProductOptionsRequest extends Request
     {
         return [
             'selected_options' => 'required',
-            'next_option_id' => 'required',
         ];
     }
 

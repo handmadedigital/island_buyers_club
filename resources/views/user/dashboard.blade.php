@@ -44,7 +44,7 @@
                         <div class="col s6 m3 small-padding">
                             <a href="/product/{{$product->slug}}">
                                 <div class="dash-product-block-wrapper no-background center">
-                                    <img src="/static/img/{{$product->images[0]->src}}">
+                                    <img src="/media/product_images/{{$product->images[0]->src}}">
                                 </div>
                             </a>
                         </div>

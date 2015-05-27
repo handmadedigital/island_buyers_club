@@ -1,5 +1,6 @@
 <?php namespace TGL\Shop\Products\Services;
 
+use Illuminate\Support\Facades\DB;
 use TGL\Shop\Products\Entities\ProductOptionValue;
 use TGL\Shop\Products\Repositories\ProductRepository;
 
@@ -35,20 +36,10 @@ class ProductService
         return $this->productRepo->getProducts();
     }
 
-    public function getProductOptions($selected_options, $next_option_id)
+    public function getProductOptions($selected_options)
     {
-        $possible_variants = [];
+        $variant = DB::table('product_option_value_variant')->where('product_option_value_id', '=', $selected_options)->first();
 
-        foreach($selected_options as $selected_option)
-        {
-            $option_value = ProductOptionValue::where('id', '=', $selected_option)->first();
-
-            foreach($option_value->variants as $variant)
-            {
-                $possible_variants[] = $variant->id;
-            }
-        }
-
-        dd($possible_variants);
+        return $variant->variant_id;
     }
 }
