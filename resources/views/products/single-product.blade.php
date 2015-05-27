@@ -74,10 +74,11 @@
                         </div>
                         <div class="single-product-options">
                             @if(isset($product->options))
+                                <h3>Select your options</h3>
                                 @foreach($product->options as $option)
                                     <div class="row">
                                         <div class="col s12 m2">
-                                            <h4>{{$option->name}}</h4>
+                                            <h3>{{$option->name}}</h3>
                                         </div>
                                         <div class="col s12 m4">
                                             <select class="select-option-values">
