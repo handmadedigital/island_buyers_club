@@ -142,6 +142,7 @@ return [
 		'TGL\Providers\ConfigServiceProvider',
 		'TGL\Providers\RouteServiceProvider',
 		'TGL\Providers\EventServiceProvider',
+		'TGL\Providers\AppServiceProvider',
 
 		/*
 		 * FIRST PARTY

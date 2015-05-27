@@ -14,7 +14,11 @@ function getOptionValues()
             "/product/get-options",
             {'selected_options[]': selected_options},
             function(data){
-                $('#variantIdValue').val(data);
+                $('#variantIdValue').val(data.price);
+                $('.single-product-cubic-footage').text(data.cubic_feet);
+                $('.single-product-weight').text(data.weight);
+                $('.single-product-quantity').text(data.quantity);
+                $('.single-product-price').text(data.price);
             }
         );
     });

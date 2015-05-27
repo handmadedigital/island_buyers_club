@@ -93,10 +93,10 @@
                                 <div class="checkout-total-individual-info">
                                     <div class="row">
                                         <div class="col s6 no-padding">
-                                            <h6>Shipping</h6>
+                                            <h6>Freight</h6>
                                         </div>
                                         <div class="col s6">
-                                            <h6>FREE Shipping</h6>
+                                            <h6>$0.00</h6>
                                         </div>
                                     </div>
                                 </div>

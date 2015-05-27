@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use TGL\Shop\Products\Entities\ProductOptionValue;
+use TGL\Shop\Products\Entities\Variant;
 use TGL\Shop\Products\Repositories\ProductRepository;
 
 class ProductService
@@ -40,6 +41,6 @@ class ProductService
     {
         $variant = DB::table('product_option_value_variant')->where('product_option_value_id', '=', $selected_options)->first();
 
-        return $variant->variant_id;
+        return Variant::find($variant->variant_id)->toArray();
     }
 }

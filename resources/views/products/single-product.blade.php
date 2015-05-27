@@ -12,26 +12,42 @@
             <div class="row">
                 <div class="col s6 m3">
                     <div class="product-header-info-wrapper">
-                        <h5>Size(LxWxH)</h5>
-                        <h6>{{$product->masterVariant->length}}" x {{$product->masterVariant->width}}" x {{$product->masterVariant->height}}"</h6>
+                        <h5>Cubic Feet</h5>
+                        @if(empty($product->options->toArray()))
+                            <h6>{{$product->masterVariant->cubic_feet}}'</h6>
+                        @else
+                            <h6 class="single-product-cubic-footage">TBD</h6>
+                        @endif
                     </div>
                 </div>
                 <div class="col s6 m3">
                     <div class="product-header-info-wrapper">
                         <h5>Weight</h5>
-                        <h6>{{$product->masterVariant->weight}}lbs</h6>
+                        @if(empty($product->options->toArray()))
+                            <h6>{{$product->masterVariant->weight}}lbs</h6>
+                        @else
+                            <h6 class="single-product-weight">TBD</h6>
+                        @endif
                     </div>
                 </div>
                 <div class="col s6 m3">
                     <div class="product-header-info-wrapper">
                         <h5>Min Qty</h5>
-                        <h6>{{$product->masterVariant->quantity}}</h6>
+                        @if(empty($product->options->toArray()))
+                            <h6>{{$product->masterVariant->quantity}}</h6>
+                        @else
+                            <h6 class="single-product-quantity">TBD</h6>
+                        @endif
                     </div>
                 </div>
                 <div class="col s6 m3">
                     <div class="product-header-info-wrapper">
                         <h5>Individual Price</h5>
-                        <h6>$<?php $ind_price =  $product->masterVariant->price / $product->masterVariant->quantity; echo number_format((float)$ind_price, 2, '.', '');  ?></h6>
+                        @if(empty($product->options->toArray()))
+                            <h6>$<?php $ind_price =  $product->masterVariant->price / $product->masterVariant->quantity; echo number_format((float)$ind_price, 2, '.', '');  ?></h6>
+                        @else
+                            <h6 class="single-product-price">TBD</h6>
+                        @endif
                     </div>
                 </div>
             </div>
