@@ -106,7 +106,7 @@
                                             <h6>Order Total</h6>
                                         </div>
                                         <div class="col s6">
-                                            <h6>${{$total_price}}</h6>
+                                            <h6>${{$total_price}}.00</h6>
                                         </div>
                                     </div>
                                 </div>
