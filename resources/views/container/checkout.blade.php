@@ -60,13 +60,13 @@
                                     @endif
                                 </div>
                                 <div class="col s2">
-                                    <p>{{$container->variant->price}}</p>
+                                    <p class="right">{{$container->variant->price}}</p>
                                 </div>
                                 <div class="col s3">
                                     <p>{{$container->quantity}}</p>
                                 </div>
                                 <div class="col s2">
-                                    <p>${{$container->quantity * $container->variant->price}}</p>
+                                    <p class="right">${{$container->quantity * $container->variant->price}}.00</p>
                                 </div>
                             </div>
                             <?php
