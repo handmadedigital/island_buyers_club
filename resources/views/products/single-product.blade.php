@@ -96,13 +96,17 @@
                                         <div class="col s12 m2">
                                             <h3>{{ucwords($option->name)}}</h3>
                                         </div>
-                                        <div class="col s12 m4">
-                                            <select class="select-option-values">
-                                                <option value="{{$option->id}}" disabled selected="selected">{{$option->name}}</option>
+                                        <div class="col s12 m7">
+                                            <div class="row">
                                                 @foreach($option->values as $value)
-                                                    <option value="{{$value->id}}">{{$value->name}}</option>
+                                                <div class="col s12 m3">
+                                                    <p>
+                                                          <input type="checkbox" id="productValueId{{$value->id}}" />
+                                                          <label for="productValueId{{$value->id}}">Red</label>
+                                                    </p>
+                                                </div>
                                                 @endforeach
-                                            </select>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
