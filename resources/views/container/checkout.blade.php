@@ -66,7 +66,7 @@
                                     <p>{{$container->quantity}}</p>
                                 </div>
                                 <div class="col s2">
-                                    <p style="margin-right: 3%;" class="right">${{$container->quantity * $container->variant->price}}.00</p>
+                                    <p style="margin-right: 70%;" class="right">${{$container->quantity * $container->variant->price}}.00</p>
                                 </div>
                             </div>
                             <?php
