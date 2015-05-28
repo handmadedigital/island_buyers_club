@@ -46,7 +46,11 @@
                                                     <h6>{{ucwords($product->name)}}</h6>
                                                 </div>
                                                 <div class="col s4">
-                                                    <h6>${{$product->masterVariant->price}}</h6>
+                                                    @if(empty($product->options->toArray()))
+                                                        <h6>${{$product->masterVariant->price}}</h6>
+                                                    @else
+                                                        <h6></h6>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="row">

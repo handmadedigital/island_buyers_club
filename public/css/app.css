@@ -519,5 +519,8 @@ th {
   padding: 5px;
   margin-top: .5%; }
 
+.product-display-view {
+  display: none; }
+
 
 /*# sourceMappingURL=app.css.map */
