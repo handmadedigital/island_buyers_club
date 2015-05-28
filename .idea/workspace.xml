@@ -48,9 +48,11 @@
       <file leaf-file-name="checkout.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/container/checkout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62110555" vertical-offset="810" max-vertical-offset="4179">
-              <caret line="68" column="62" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-              <folding />
+            <state vertical-scroll-proportion="0.49447235" vertical-offset="810" max-vertical-offset="4179">
+              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+              <folding>
+                <element signature="e#3018#3044#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -731,9 +733,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/container/checkout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62110555" vertical-offset="810" max-vertical-offset="4179">
-          <caret line="68" column="62" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-          <folding />
+        <state vertical-scroll-proportion="0.49447235" vertical-offset="810" max-vertical-offset="4179">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding>
+            <element signature="e#3018#3044#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

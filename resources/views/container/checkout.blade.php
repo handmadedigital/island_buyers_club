@@ -60,7 +60,7 @@
                                     @endif
                                 </div>
                                 <div class="col s2">
-                                    <p>{{$container->variant->price}}</p>
+                                    <p>${{$container->variant->price}}</p>
                                 </div>
                                 <div class="col s3">
                                     <p>{{$container->quantity}}</p>
